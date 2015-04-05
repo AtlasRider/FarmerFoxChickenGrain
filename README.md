@@ -1,5 +1,7 @@
 # FarmerFoxChickenGrain
 
+<img src="docs/chicken-corn-fox-png.png" />
+
 This project uses basic artificial intelligence concepts to solve the following riddle:
 
 <p>A man has to get a fox, a chicken, and a sack of grain across a river. 
