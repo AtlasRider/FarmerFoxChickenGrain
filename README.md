@@ -10,9 +10,10 @@ If the fox and the chicken are left together, the fox will eat the chicken.
 If the chicken and the grain are left together, the chicken will eat the grain.</p>
 
 <i>Get the farmer, fox, chicken and grain across the river.</i>
+
 ------------------
 
-<b>Goal Tree</b
+<b>Goal Tree</b>
 
 This is the goal tree generated from the rules of the riddle.
 
