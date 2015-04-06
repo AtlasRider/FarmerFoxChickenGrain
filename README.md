@@ -63,6 +63,9 @@ The project was created with IntelliJ and uses GraphStream libraries that are al
 
 After running the app, you should see a visual representation of the graph used to solve this problem, along with a output of the solution. 
 
+-----------------------
+
+<b>Solution Output:</b>
 
 ```  
 Number of possible states: 81
