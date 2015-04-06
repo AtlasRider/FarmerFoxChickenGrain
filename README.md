@@ -9,10 +9,13 @@ He has a rowboat, and it can only carry him and one other thing.
 If the fox and the chicken are left together, the fox will eat the chicken.
 If the chicken and the grain are left together, the chicken will eat the grain.</p>
 
-<b>Get the farmer, fox, chicken and grain across the river.</b>
+<i>Get the farmer, fox, chicken and grain across the river.</i>
+
 ------------------
 
-This is the decision tree generated from the rules of the riddle.
+<b>Goal Tree</b>
+
+This is the goal tree generated from the rules of the riddle.
 
 <img src="docs/graph.png" />  
 
@@ -63,6 +66,9 @@ The project was created with IntelliJ and uses GraphStream libraries that are al
 
 After running the app, you should see a visual representation of the graph used to solve this problem, along with a output of the solution. 
 
+-----------------------
+
+<b>Solution Output:</b>
 
 ```  
 Number of possible states: 81
