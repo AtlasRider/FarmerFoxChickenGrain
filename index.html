@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>The farmer, fox, chicken and the grain problem by AtlasRider</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">The farmer, fox, chicken and the grain problem</h1>
+      <h2 class="project-tagline">An artificial intelligence solution to a common riddle</h2>
+      <a href="https://github.com/AtlasRider/FarmerFoxChickenGrain" class="btn">View on GitHub</a>
+      <a href="https://github.com/AtlasRider/FarmerFoxChickenGrain/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/AtlasRider/FarmerFoxChickenGrain/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="farmerfoxchickengrain" class="anchor" href="#farmerfoxchickengrain" aria-hidden="true"><span class="octicon octicon-link"></span></a>FarmerFoxChickenGrain</h1>
+
+<p><img src="master/docs/chicken-corn-fox-png.png"></p>
+
+<p>This project uses basic artificial intelligence concepts to solve the following riddle:</p>
+
+<p>A man has to get a fox, a chicken, and a sack of grain across a river. 
+He has a rowboat, and it can only carry him and one other thing.
+If the fox and the chicken are left together, the fox will eat the chicken.
+If the chicken and the grain are left together, the chicken will eat the grain.</p>
+
+<p><i>Get the farmer, fox, chicken and grain across the river.</i></p>
+
+<hr>
+
+<p><b>Goal Tree</b></p>
+
+<p>This is the goal tree generated from the rules of the riddle.</p>
+
+<p><img src="docs/graph.png" alt=""></p>
+
+<p><b>Location states</b></p>
+
+<pre><code>            !                !
+            !                !
+            !                !
+            !                !
+LEFT SIDE   !    RIVER       !    RIGHT SIDE
+            !                !
+            !                !
+            !                !
+            !                !
+    0               1               2
+</code></pre>
+
+<p><b>State syntax</b></p>
+
+<p>Each node on the graph has a four digit number. The each digit represents where the riddle participants are located. </p>
+
+<p><i>Start State</i> - Everyone is on the left side.</p>
+
+<pre><code>0 Farmer
+0 Fox
+0 Chicken
+0 Grain
+</code></pre>
+
+<p><i>End State</i> - Everyone is on the right side.</p>
+
+<pre><code>2 Farmer
+2 Fox
+2 Chicken
+2 Grain
+</code></pre>
+
+<p><i>Random State</i> - The farmer and the fox are in the boat, the chicken is on the left, and the grain is on the right.</p>
+
+<pre><code>1 Farmer
+1 Fox
+0 Chicken
+2 Grain
+</code></pre>
+
+<hr>
+
+<p>The project was created with IntelliJ and uses GraphStream libraries that are already included.</p>
+
+<p>After running the app, you should see a visual representation of the graph used to solve this problem, along with a output of the solution. </p>
+
+<hr>
+
+<p><b>Solution Output:</b></p>
+
+<pre><code>Number of possible states: 81
+Number of valid states: 20
+Solution: [0000, 1010, 2020, 1020, 0020, 1021, 2022, 1012, 0002, 1102, 2202, 1202, 0202, 1212, 2222]
+            |            |            
+  Farmer    |            |            
+  Fox       |            |            
+  Chicken   |            |            
+  Grain     |            |            
+            |            |            
+--------------------------------------
+            |            |            
+            |    Farmer  |            
+  Fox       |            |            
+            |   Chicken  |            
+  Grain     |            |            
+            |            |            
+--------------------------------------
+            |            |            
+            |            |    Farmer  
+  Fox       |            |            
+            |            |   Chicken  
+  Grain     |            |            
+            |            |            
+--------------------------------------
+            |            |            
+            |    Farmer  |            
+  Fox       |            |            
+            |            |   Chicken  
+  Grain     |            |            
+            |            |            
+--------------------------------------
+            |            |            
+  Farmer    |            |            
+  Fox       |            |            
+            |            |   Chicken  
+  Grain     |            |            
+            |            |            
+--------------------------------------
+            |            |            
+            |    Farmer  |            
+  Fox       |            |            
+            |            |   Chicken  
+            |     Grain  |            
+            |            |            
+--------------------------------------
+            |            |            
+            |            |    Farmer  
+  Fox       |            |            
+            |            |   Chicken  
+            |            |     Grain  
+            |            |            
+--------------------------------------
+            |            |            
+            |    Farmer  |            
+  Fox       |            |            
+            |   Chicken  |            
+            |            |     Grain  
+            |            |            
+--------------------------------------
+            |            |            
+  Farmer    |            |            
+  Fox       |            |            
+  Chicken   |            |            
+            |            |     Grain  
+            |            |            
+--------------------------------------
+            |            |            
+            |    Farmer  |            
+            |       Fox  |            
+  Chicken   |            |            
+            |            |     Grain  
+            |            |            
+--------------------------------------
+            |            |            
+            |            |    Farmer  
+            |            |       Fox  
+  Chicken   |            |            
+            |            |     Grain  
+            |            |            
+--------------------------------------
+            |            |            
+            |    Farmer  |            
+            |            |       Fox  
+  Chicken   |            |            
+            |            |     Grain  
+            |            |            
+--------------------------------------
+            |            |            
+  Farmer    |            |            
+            |            |       Fox  
+  Chicken   |            |            
+            |            |     Grain  
+            |            |            
+--------------------------------------
+            |            |            
+            |    Farmer  |            
+            |            |       Fox  
+            |   Chicken  |            
+            |            |     Grain  
+            |            |            
+--------------------------------------
+            |            |            
+            |            |    Farmer  
+            |            |       Fox  
+            |            |   Chicken  
+            |            |     Grain  
+            |            |            
+--------------------------------------  
+</code></pre>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/AtlasRider/FarmerFoxChickenGrain">The farmer, fox, chicken and the grain problem</a> is maintained by <a href="https://github.com/AtlasRider">AtlasRider</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
